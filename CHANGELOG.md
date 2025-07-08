@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### 🚀 Features
+
+- Implemented main entities for listing context
+- Added api and unit test empty project
+
+### 🐛 Bug Fixes
+
+- Adapted domain to dispatch domain events
+
 ### 📚 Documentation
 
 - Added README.md
