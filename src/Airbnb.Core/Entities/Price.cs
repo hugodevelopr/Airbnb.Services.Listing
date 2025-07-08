@@ -1,4 +1,5 @@
 ﻿using Airbnb.SharedKernel.Entities;
+using Airbnb.SharedKernel.Events;
 
 namespace Airbnb.Core.Entities;
 
@@ -14,4 +15,8 @@ public class Price : BaseEntity
     public decimal? ExtraGuestFee { get; private set; }                    
     public Guid ListingId { get; private set; }
 
+    protected override void Apply(IDomainEvent @event)
+    {
+        throw new NotImplementedException();
+    }
 }

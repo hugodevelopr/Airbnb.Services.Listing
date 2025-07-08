@@ -1,4 +1,5 @@
 ﻿using Airbnb.SharedKernel.Entities;
+using Airbnb.SharedKernel.Events;
 
 namespace Airbnb.Core.Entities;
 
@@ -15,7 +16,6 @@ public class Listing : BaseEntity
     public DateTime CreatedAt { get; set; }
     public DateTime? UpdatedAt { get; set; }
 
-    public virtual Host Host { get; private set; } = null!;
     public virtual Location Location { get; private set; } = null!;
     public virtual Price Price { get; private set; } = null!;
     public virtual Availability Availability { get; private set; } = null!;
@@ -41,5 +41,10 @@ public class Listing : BaseEntity
         Draft = 2,
         Published = 4,
         Unlisted = 6,
+    }
+
+    protected override void Apply(IDomainEvent @event)
+    {
+        throw new NotImplementedException();
     }
 }

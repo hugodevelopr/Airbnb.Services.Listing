@@ -1,4 +1,5 @@
 ﻿using Airbnb.SharedKernel.Entities;
+using Airbnb.SharedKernel.Events;
 
 namespace Airbnb.Core.Entities;
 
@@ -27,5 +28,10 @@ public class ListingRule : BaseEntity
     public string? GetParameter(string key)
     {
         return _parameters.GetValueOrDefault(key);
+    }
+
+    protected override void Apply(IDomainEvent @event)
+    {
+        throw new NotImplementedException();
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Airbnb.SharedKernel.Entities;
+using Airbnb.SharedKernel.Events;
 
 namespace Airbnb.Core.Entities;
 
@@ -13,12 +14,17 @@ public class RuleParameterDefinition : BaseEntity
     {
     }
 
-    public RuleParameterDefinition(string name, string type, string? defaultValue, Guid ruleCatalogId)
+    public RuleParameterDefinition(Guid ruleCatalogId, string name, string type, string? defaultValue)
     {
         Id = Guid.NewGuid();
         Name = name;
         Type = type;
         DefaultValue = defaultValue;
         RuleCatalogId = ruleCatalogId;
+    }
+
+    protected override void Apply(IDomainEvent @event)
+    {
+        throw new NotImplementedException();
     }
 }
