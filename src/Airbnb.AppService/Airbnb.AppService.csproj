@@ -6,4 +6,11 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Commands\Listing\UpdateExtraGuestFee\" />
+    <Folder Include="Commands\Listing\SuspendListing\" />
+    <Folder Include="Integrations\" />
+    <Folder Include="Queries\" />
+  </ItemGroup>
+
 </Project>

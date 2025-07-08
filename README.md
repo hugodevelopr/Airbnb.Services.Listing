@@ -10,13 +10,15 @@ This is the **Listing microservice** of the [Airbnb Architecture Project](https:
 
 ---
 
-## 🔧 Tech Stack
+## 🔧 Tech Stack & Patterns
 
 - C# (.NET 9)
 - Entity Framework Core
 - Newtonsoft.Json
 - Figgle
 - Swagger UI (Swashbuckle)
+- CQRS
+- Domain Events
 
 
 ---

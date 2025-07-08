@@ -8,6 +8,7 @@ All notable changes to this project will be documented in this file.
 
 - Implemented main entities for listing context
 - Added api and unit test empty project
+- Added Airbnb.Benchmark empty project
 
 ### 🐛 Bug Fixes
 
