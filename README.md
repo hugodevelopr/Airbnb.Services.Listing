@@ -12,12 +12,8 @@ This is the **Listing microservice** of the [Airbnb Architecture Project](https:
 
 ## 🔧 Tech Stack
 
-- **Language:** C# (.NET 8)
-- **Architecture:** Microservices + DDD + Clean Architecture
-- **Database:** Azure SQL
-- **Messaging:** Azure Service Bus
-- **Cloud:** Microsoft Azure
-- **CI/CD:** GitHub Actions
+- C# (.NET 9)
+
 
 ---
 
