@@ -1,4 +1,4 @@
-﻿namespace Airbnb.AppService.Events.ListingCreated;
+﻿namespace Airbnb.AppService.Events.Listing.ListingCreated;
 
 public class ListingCreatedEvent
 {

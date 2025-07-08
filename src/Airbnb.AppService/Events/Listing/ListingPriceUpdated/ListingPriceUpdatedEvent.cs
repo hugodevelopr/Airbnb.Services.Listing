@@ -1,4 +1,4 @@
-﻿namespace Airbnb.AppService.Events.ListingPriceUpdated;
+﻿namespace Airbnb.AppService.Events.Listing.ListingPriceUpdated;
 
 public class ListingPriceUpdatedEvent
 {

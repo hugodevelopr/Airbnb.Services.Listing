@@ -1,4 +1,4 @@
-﻿namespace Airbnb.AppService.Events.ListingImagesUpdated;
+﻿namespace Airbnb.AppService.Events.Listing.ListingImagesUpdated;
 
 public class ListingImagesUpdatedEventHandler
 {

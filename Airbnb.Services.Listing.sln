@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Airbnb.UnitTests", "test\Ai
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Airbnb.Benchmark", "test\Airbnb.Benchmark\Airbnb.Benchmark.csproj", "{A81F8859-BC0A-40F6-8A12-A0CCD76014CC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Airbnb.Infra.DependencyInjection", "src\Airbnb.Infra.DependencyInjection\Airbnb.Infra.DependencyInjection.csproj", "{09FA4E07-97D9-44C4-A97A-0F595B0D6D5B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +63,10 @@ Global
 		{A81F8859-BC0A-40F6-8A12-A0CCD76014CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A81F8859-BC0A-40F6-8A12-A0CCD76014CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A81F8859-BC0A-40F6-8A12-A0CCD76014CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09FA4E07-97D9-44C4-A97A-0F595B0D6D5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09FA4E07-97D9-44C4-A97A-0F595B0D6D5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09FA4E07-97D9-44C4-A97A-0F595B0D6D5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09FA4E07-97D9-44C4-A97A-0F595B0D6D5B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -73,5 +79,6 @@ Global
 		{28481CF5-FAE7-4997-9BFE-24D5C8F5A420} = {EE58EBFA-B370-49D9-996C-5F369D6D0CFA}
 		{3F512AF4-A76C-405F-A2DF-49AAD8778247} = {293CDC82-9349-40B4-A0E9-C66CBFD3C583}
 		{A81F8859-BC0A-40F6-8A12-A0CCD76014CC} = {293CDC82-9349-40B4-A0E9-C66CBFD3C583}
+		{09FA4E07-97D9-44C4-A97A-0F595B0D6D5B} = {2EDA63D3-87D2-4568-9145-84933D6C66D7}
 	EndGlobalSection
 EndGlobal

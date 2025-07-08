@@ -14,7 +14,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\Airbnb.AppService\Airbnb.AppService.csproj" />
+    <ProjectReference Include="..\Airbnb.Infra.DependencyInjection\Airbnb.Infra.DependencyInjection.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Infrstrure\" />
   </ItemGroup>
 
 </Project>

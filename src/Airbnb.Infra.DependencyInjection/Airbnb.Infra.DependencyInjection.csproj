@@ -7,15 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Commands\Listing\UpdateExtraGuestFee\" />
-    <Folder Include="Commands\Listing\SuspendListing\" />
-    <Folder Include="Services\" />
-    <Folder Include="Queries\" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.6" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Airbnb.AppService\Airbnb.AppService.csproj" />
     <ProjectReference Include="..\Airbnb.Core\Airbnb.Core.csproj" />
-    <ProjectReference Include="..\Airbnb.SharedKernel\Airbnb.SharedKernel.csproj" />
+    <ProjectReference Include="..\Airbnb.Infra.Repository\Airbnb.Infra.Repository.csproj" />
   </ItemGroup>
 
 </Project>

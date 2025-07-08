@@ -1,6 +1,8 @@
-﻿namespace Airbnb.AppService.Events.ListingUpdated;
+﻿using Airbnb.SharedKernel.Events;
 
-public class ListingUpdatedEvent
+namespace Airbnb.AppService.Events.Listing.ListingUpdated;
+
+public class ListingUpdatedEvent : IDomainEvent
 {
 
 }

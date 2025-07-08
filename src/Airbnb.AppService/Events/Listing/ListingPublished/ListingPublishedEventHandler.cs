@@ -1,6 +1,11 @@
-﻿namespace Airbnb.AppService.Events.ListingPublished;
+﻿using Airbnb.Core.Events.DomainEvents;
 
-public class ListingPublishedEventHandler
+namespace Airbnb.AppService.Events.Listing.ListingPublished;
+
+public class ListingPublishedEventHandler : IDomainEventHandler<ListingPublishedEvent>
 {
-    
+    public async Task HandleAsync(ListingPublishedEvent @event)
+    {
+        throw new NotImplementedException();
+    }
 }

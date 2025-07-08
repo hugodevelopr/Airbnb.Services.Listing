@@ -1,6 +1,6 @@
-﻿namespace Airbnb.AppService.Events.ListingSuspendedBySystem;
+﻿namespace Airbnb.AppService.Events.Listing.ListingSuspendedBySystem;
 
 public class ListingSuspendedBySystemEventHandler
 {
-    
+
 }

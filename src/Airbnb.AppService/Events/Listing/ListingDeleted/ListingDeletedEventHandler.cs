@@ -1,6 +1,6 @@
-﻿namespace Airbnb.AppService.Events.ListingDeleted;
+﻿namespace Airbnb.AppService.Events.Listing.ListingDeleted;
 
 public class ListingDeletedEventHandler
 {
-    
+
 }

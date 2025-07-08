@@ -1,3 +1,4 @@
+using Airbnb.Infra.DependencyInjection;
 using Figgle.Fonts;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,6 +7,8 @@ Console.WriteLine(FiggleFonts.Doom.Render("Airbnb.Service.Listing"));
 
 builder.Services.AddControllers();
 builder.Services.AddOpenApi();
+
+builder.Services.AddAirbnbDependencies(builder.Configuration);
 
 var app = builder.Build();
 

@@ -1,6 +1,6 @@
-﻿namespace Airbnb.AppService.Events.ListingUnpublished;
+﻿namespace Airbnb.AppService.Events.Listing.ListingUnpublished;
 
 public class ListingUnpublishedEventHandler
 {
-    
+
 }
