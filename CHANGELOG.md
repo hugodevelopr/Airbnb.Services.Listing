@@ -10,6 +10,7 @@ All notable changes to this project will be documented in this file.
 - Added api and unit test empty project
 - Added Airbnb.Benchmark empty project
 - Added commands and domain events
+- Implemented dependency injection
 
 ### 🐛 Bug Fixes
 

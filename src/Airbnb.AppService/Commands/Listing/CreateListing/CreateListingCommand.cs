@@ -1,6 +1,8 @@
-﻿namespace Airbnb.AppService.Commands.Listing.CreateListing;
+﻿using Airbnb.Core.Commands;
 
-public sealed class CreateListingCommand
+namespace Airbnb.AppService.Commands.Listing.CreateListing;
+
+public sealed class CreateListingCommand : ICommand
 {
 
 }
