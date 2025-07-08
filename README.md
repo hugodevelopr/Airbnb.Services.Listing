@@ -15,6 +15,8 @@ This is the **Listing microservice** of the [Airbnb Architecture Project](https:
 - C# (.NET 9)
 - Entity Framework Core
 - Newtonsoft.Json
+- Figgle
+- Swagger UI (Swashbuckle)
 
 
 ---
