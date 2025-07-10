@@ -17,6 +17,7 @@
   <ItemGroup>
     <Folder Include="Commands\Dispatcher\" />
     <Folder Include="Events\IntegrationEvents\" />
+    <Folder Include="Repositories\" />
     <Folder Include="Services\" />
   </ItemGroup>
 

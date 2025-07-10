@@ -1,4 +1,5 @@
-﻿using Airbnb.SharedKernel.Entities;
+﻿using Airbnb.Core.Events.Events.Listing.ListingCreated;
+using Airbnb.SharedKernel.Entities;
 using Airbnb.SharedKernel.Events;
 
 namespace Airbnb.Core.Entities;
@@ -48,6 +49,10 @@ public class Listing : BaseEntity
 
     protected override void Apply(IDomainEvent @event)
     {
-        throw new NotImplementedException();
+        switch (@event)
+        {
+            case ListingCreatedEvent e:
+                break;
+        }
     }
 }
