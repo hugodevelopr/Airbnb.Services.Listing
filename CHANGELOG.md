@@ -12,6 +12,7 @@ All notable changes to this project will be documented in this file.
 - Added commands and domain events
 - Implemented dependency injection
 - Implemented integration event and domain event to CreateListingCommand
+- Implemented the use of queue sending with Azure Service Bus and request audit middleware
 
 ### 🐛 Bug Fixes
 
