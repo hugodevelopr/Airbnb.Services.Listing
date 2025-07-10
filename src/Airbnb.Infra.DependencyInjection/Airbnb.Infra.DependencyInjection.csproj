@@ -13,6 +13,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Airbnb.AppService\Airbnb.AppService.csproj" />
     <ProjectReference Include="..\Airbnb.Core\Airbnb.Core.csproj" />
+    <ProjectReference Include="..\Airbnb.Infra.Broker\Airbnb.Infra.Broker.csproj" />
     <ProjectReference Include="..\Airbnb.Infra.Repository\Airbnb.Infra.Repository.csproj" />
   </ItemGroup>
 

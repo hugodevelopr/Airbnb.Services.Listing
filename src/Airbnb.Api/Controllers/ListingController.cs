@@ -1,12 +1,13 @@
-﻿using Airbnb.AppService.Commands.Listing.CreateListing;
+﻿using Airbnb.Api.Infrastructure.Controllers;
+using Airbnb.AppService.Commands.Listing.CreateListing;
 using Airbnb.Core.Commands;
+using Airbnb.SharedKernel;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Airbnb.Api.Controllers;
 
-[ApiController]
 [Route("api/listings")]
-public class ListingController : ControllerBase
+public class ListingController : BaseController
 {
     private readonly ICommandDispatcher _commandDispatcher;
 
@@ -19,6 +20,11 @@ public class ListingController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> CreateListing([FromBody] CreateListingCommand command)
     {
-        return Ok();
+        var result = await _commandDispatcher.DispatchAsync(command);
+
+        if (result.IsSuccess)
+            return await Created(result);
+        
+        return Error(ErrorCode.FailedToCreateListing, result.Errors);
     }
 }

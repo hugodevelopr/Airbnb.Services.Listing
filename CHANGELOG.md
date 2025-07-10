@@ -11,6 +11,7 @@ All notable changes to this project will be documented in this file.
 - Added Airbnb.Benchmark empty project
 - Added commands and domain events
 - Implemented dependency injection
+- Implemented integration event and domain event to CreateListingCommand
 
 ### 🐛 Bug Fixes
 

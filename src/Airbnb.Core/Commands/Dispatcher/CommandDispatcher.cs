@@ -2,18 +2,11 @@
 
 namespace Airbnb.Core.Commands.Dispatcher;
 
-public class CommandDispatcher : ICommandDispatcher
+public class CommandDispatcher(IServiceScopeFactory serviceScopeFactory) : ICommandDispatcher
 {
-    private readonly IServiceScopeFactory _serviceScopeFactory;
-
-    public CommandDispatcher(IServiceScopeFactory serviceScopeFactory)
-    {
-        _serviceScopeFactory = serviceScopeFactory;
-    }
-
     public async Task<TResult> DispatchAsync<TResult>(ICommand<TResult> query)
     {
-        using var scope = _serviceScopeFactory.CreateScope();
+        using var scope = serviceScopeFactory.CreateScope();
         var handlerType = typeof(ICommandHandler<,>).MakeGenericType(query.GetType(), typeof(TResult));
         var handler = scope.ServiceProvider.GetRequiredService(handlerType);
 
@@ -24,7 +17,7 @@ public class CommandDispatcher : ICommandDispatcher
 
     public async Task<TResult> DispatchAsync<TCommand, TResult>(TCommand command) where TCommand : class, ICommand<TResult>
     {
-        using var scope = _serviceScopeFactory.CreateScope();
+        using var scope = serviceScopeFactory.CreateScope();
         var handler = scope.ServiceProvider.GetRequiredService<ICommandHandler<TCommand, TResult>>();
         return await handler.HandleAsync(command);
     }

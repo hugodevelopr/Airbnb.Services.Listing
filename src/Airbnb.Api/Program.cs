@@ -1,3 +1,4 @@
+using Airbnb.Api.Infrastructure.Middlewares;
 using Airbnb.Infra.DependencyInjection;
 using Figgle.Fonts;
 
@@ -23,5 +24,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.UseEndpoints(configure: endpoints => { _ = endpoints.MapControllers(); });
+
+app.UseMiddleware<AuditMiddleware>();
 
 app.Run();

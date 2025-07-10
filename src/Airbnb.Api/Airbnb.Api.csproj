@@ -19,7 +19,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Infrstrure\" />
+    <Folder Include="Infrastructure\Audit\" />
+    <Folder Include="Infrastructure\Middlewares\" />
   </ItemGroup>
 
 </Project>
