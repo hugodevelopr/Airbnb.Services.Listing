@@ -8,6 +8,10 @@ public sealed class Address : IEquatable<Address>
     public string Street { get; }
     public string ZipCode { get; }
 
+    private Address()
+    {
+    }
+
     public Address(string country, string state, string city, string street, string zipCode)
     {
         Country = country;
@@ -61,6 +65,6 @@ public sealed class Address : IEquatable<Address>
 
     public override string ToString()
     {
-        return $"{Street}, {City}, {State}, {Country}, {ZipCode}";
+        return $"{Country}, {State}, {City}, {Street}, {ZipCode}";
     }
 }

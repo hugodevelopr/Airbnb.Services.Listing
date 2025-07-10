@@ -14,6 +14,7 @@ public class Price : BaseEntity
     public decimal? MonthlyDiscount { get; private set; }
     public decimal? ExtraGuestFee { get; private set; }                    
     public Guid ListingId { get; private set; }
+    public virtual Listing Listing { get; private set; } = null!;
 
     protected override void Apply(IDomainEvent @event)
     {

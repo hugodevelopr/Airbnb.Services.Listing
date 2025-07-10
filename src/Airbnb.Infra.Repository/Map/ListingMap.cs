@@ -26,30 +26,7 @@ public class ListingMap : IEntityTypeConfiguration<Listing>
         builder.Property(x => x.HostId)
             .IsRequired();
 
-        builder.OwnsOne(x => x.Location, location =>
-        {
-            location.Property(x => x.Address.Country)
-                .HasColumnName("Country")
-                .HasMaxLength(50)
-                .IsRequired();
-
-            location.Property(x => x.Address.City)
-                .HasColumnName("City")
-                .HasMaxLength(100)
-                .IsRequired();
-
-            location.Property(x => x.Address.Street)
-                .HasColumnName("Street")
-                .HasMaxLength(200)
-                .IsRequired();
-
-            location.Property(x => x.Address.ZipCode)
-                .HasColumnName("ZipCode")
-                .HasMaxLength(20)
-                .IsRequired();
-        });
-
-        builder.Property(x => x.Bedrooms)
+       builder.Property(x => x.Bedrooms)
             .HasDefaultValue(0)
             .IsRequired();
 

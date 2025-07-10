@@ -15,7 +15,7 @@ public static class DependencyInjection
     {
         services.AddAppService();
         services.AddCore();
-        services.AddRepository();
+        services.AddRepository(configuration);
         services.AddBroker();
 
         services.AddSingleton<AuditPublisherDelegate>(sp =>

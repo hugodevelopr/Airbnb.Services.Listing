@@ -13,8 +13,8 @@ public class Listing : BaseEntity
     public int Bedrooms { get; private set; }
     public int Beds { get; private set; }
     public Guid HostId { get; private set; }
-    public DateTime CreatedAt { get; set; }
-    public DateTime? UpdatedAt { get; set; }
+    public DateTime CreatedAt { get; private set; }
+    public DateTime? UpdatedAt { get; private set; }
 
     public virtual Location Location { get; private set; } = null!;
     public virtual Price Price { get; private set; } = null!;

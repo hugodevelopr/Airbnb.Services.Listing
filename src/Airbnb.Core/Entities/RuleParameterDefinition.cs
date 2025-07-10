@@ -9,6 +9,7 @@ public class RuleParameterDefinition : BaseEntity
     public string Type { get; private set; } = string.Empty;                    // e.g. "bool", "int", "string", "decimal", etc.
     public string? DefaultValue { get; private set; }
     public Guid RuleCatalogId { get; private set; }
+    public virtual RuleCatalog RuleCatalog { get; private set; } = null!;
 
     private RuleParameterDefinition()
     {

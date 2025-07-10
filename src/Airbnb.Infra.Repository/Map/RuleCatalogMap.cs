@@ -8,7 +8,7 @@ public class RuleCatalogMap : IEntityTypeConfiguration<RuleCatalog>
 {
     public void Configure(EntityTypeBuilder<RuleCatalog> builder)
     {
-        builder.ToTable("RuleCatalog", "Listing");
+        builder.ToTable("Catalog", "Rule");
 
         builder.HasKey(x => x.Id);
 

@@ -1,10 +1,11 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Airbnb.Infra.Repository;
 
 public static class Extensions
 {
-    public static IServiceCollection AddRepository(this IServiceCollection services)
+    public static IServiceCollection AddRepository(this IServiceCollection services, IConfiguration configuration)
     {
         return services;
     }

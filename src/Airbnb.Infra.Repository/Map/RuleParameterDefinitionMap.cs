@@ -8,7 +8,7 @@ public class RuleParameterDefinitionMap : IEntityTypeConfiguration<RuleParameter
 {
     public void Configure(EntityTypeBuilder<RuleParameterDefinition> builder)
     {
-        builder.ToTable("RuleParameterDefinition", "Listing");
+        builder.ToTable("ParameterDefinition", "Rule");
 
         builder.HasKey(x => x.Id);
 
@@ -26,5 +26,11 @@ public class RuleParameterDefinitionMap : IEntityTypeConfiguration<RuleParameter
         builder.Property(x => x.DefaultValue)
             .HasMaxLength(500)
             .IsRequired(false);
+
+        builder.HasOne(x => x.RuleCatalog)
+            .WithMany(rc => rc.ParameterDefitions)
+            .HasForeignKey(x => x.RuleCatalogId)
+            .IsRequired()
+            .OnDelete(DeleteBehavior.Cascade);
     }
 }

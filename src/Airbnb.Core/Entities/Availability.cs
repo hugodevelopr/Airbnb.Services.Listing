@@ -11,6 +11,7 @@ public class Availability : BaseEntity
     public int MaximumNights { get; private set; }
     public List<DateOnly> BlockedDates { get; private set; } = new();
     public Guid ListingId { get; private set; }
+    public virtual Listing Listing { get; private set; } = null!;
 
     protected override void Apply(IDomainEvent @event)
     {

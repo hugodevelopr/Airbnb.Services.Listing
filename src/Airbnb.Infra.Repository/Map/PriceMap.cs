@@ -41,9 +41,10 @@ public class PriceMap : IEntityTypeConfiguration<Price>
         builder.Property(x => x.ExtraGuestFee)
             .HasPrecision(18, 2);
 
-        builder.HasOne<Listing>()
-            .WithOne()
+        builder.HasOne(x => x.Listing)
+            .WithOne(p => p.Price)
             .HasForeignKey<Price>(x => x.ListingId)
+            .IsRequired()
             .OnDelete(DeleteBehavior.Cascade);
     }
 }
