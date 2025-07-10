@@ -14,7 +14,8 @@ public static class Extensions
     public static IServiceCollection AddAppService(this IServiceCollection services)
     {
         services
-            .AddTransient<IListingService, ListingService>()
+            .AddScoped<IListingService, ListingService>()
+            .AddScoped<ILocalizeMessageService, LocalizeMessageService>()
             .AddDomainEventHandlers()
             .AddIntegrationEventHandlers();
 

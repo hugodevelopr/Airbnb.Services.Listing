@@ -16,6 +16,7 @@ All notable changes to this project will be documented in this file.
 - Implemented IEntityTypeConfigurartion of all entities
 - Setted ITypeConfiguration and generated code-fist migration
 - Setted ITypeConfiguration and generated code-fist migration
+- Implemented WithCustomMessage a override method to FluentValidation
 
 ### 🐛 Bug Fixes
 

@@ -8,7 +8,7 @@ public class LocalizeMessageMap : IEntityTypeConfiguration<LocalizeMessage>
 {
     public void Configure(EntityTypeBuilder<LocalizeMessage> builder)
     {
-        builder.ToTable("ValidationMessage", "System");
+        builder.ToTable("LocalizeMessage", "System");
 
         builder.HasKey(x => x.Id);
 
