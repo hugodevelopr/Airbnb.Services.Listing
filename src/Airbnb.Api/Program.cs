@@ -1,5 +1,7 @@
 using Airbnb.Api.Infrastructure;
 using Airbnb.Api.Infrastructure.Middlewares;
+using Airbnb.Infra.DependencyInjection;
+using Airbnb.SharedKernel;
 using Figgle.Fonts;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -23,5 +25,7 @@ app.UseAuthorization();
 app.UseEndpoints(configure: endpoints => { _ = endpoints.MapControllers(); });
 
 app.UseMiddleware<AuditMiddleware>();
+
+ServiceLocator.SetLocatorProvider(app.Services);
 
 app.Run();

@@ -1,4 +1,6 @@
 ﻿using Airbnb.AppService.Responses.Listing;
+using Airbnb.AppService.Validations;
+using Airbnb.AppService.Validations.Listing;
 using Airbnb.Core.Commands;
 using Airbnb.Core.Services;
 using Airbnb.SharedKernel;
@@ -17,9 +19,16 @@ public class CreateListingCommandHandler : ICommandHandler<CreateListingCommand,
 
     public async Task<Result<CreateListingResponse>> HandleAsync(CreateListingCommand command)
     {
-        command.NotNull(nameof(command));
+        command.NotNullOrEmpty(nameof(command));
 
         var response = new CreateListingResponse();
+        var validator = new CreateListingValidator();
+
+        var validationResult = await validator.ValidateCommandAsync(command);
+        response.AddError(validationResult.Errors);
+
+        if (!response.IsSuccess)
+            return Result.Fail<CreateListingResponse>(response.Errors)!;
 
         return Result.Ok(response);
     }

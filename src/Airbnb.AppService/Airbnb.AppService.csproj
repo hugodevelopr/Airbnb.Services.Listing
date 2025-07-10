@@ -9,8 +9,11 @@
   <ItemGroup>
     <Folder Include="Commands\Listing\UpdateExtraGuestFee\" />
     <Folder Include="Commands\Listing\SuspendListing\" />
-    <Folder Include="Services\" />
     <Folder Include="Queries\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="12.0.0" />
   </ItemGroup>
 
   <ItemGroup>

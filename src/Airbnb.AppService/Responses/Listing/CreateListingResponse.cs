@@ -1,6 +1,8 @@
-﻿namespace Airbnb.AppService.Responses.Listing;
+﻿using Airbnb.SharedKernel.Responses;
 
-public class CreateListingResponse
+namespace Airbnb.AppService.Responses.Listing;
+
+public class CreateListingResponse : BaseResponse
 {
     
 }

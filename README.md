@@ -21,6 +21,7 @@ This is the **Listing microservice** of the [Airbnb Architecture Project](https:
 - Domain Events
 - Azure Service Bus
 - xUnit
+- FluentValidation
 
 
 ---
