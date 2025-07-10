@@ -20,6 +20,9 @@ public class Listing : BaseEntity
     public virtual Price Price { get; private set; } = null!;
     public virtual Availability Availability { get; private set; } = null!;
 
+    private readonly List<Image> _images = new();
+    public IReadOnlyCollection<Image> Images => _images.AsReadOnly();
+
     private readonly List<ListingRule> _rules = new();
     public IReadOnlyCollection<ListingRule> Rules => _rules.AsReadOnly();
 

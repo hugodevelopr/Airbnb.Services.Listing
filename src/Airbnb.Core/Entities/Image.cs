@@ -9,6 +9,7 @@ public class Image : BaseEntity
     public bool IsCoverPhoto { get; private set; }
     public int Order { get; private set; }
     public Guid ListingId { get; private set; }
+    public virtual Listing Listing { get; private set; } = null!;
 
     protected override void Apply(IDomainEvent @event)
     {

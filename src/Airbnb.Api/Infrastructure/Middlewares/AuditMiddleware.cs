@@ -1,6 +1,6 @@
 ﻿using System.Text;
-using Airbnb.Api.Infrastructure.Audit;
 using Airbnb.SharedKernel;
+using Airbnb.SharedKernel.Audit;
 
 namespace Airbnb.Api.Infrastructure.Middlewares;
 
@@ -21,7 +21,7 @@ public class AuditMiddleware(RequestDelegate next, AuditPublisherDelegate auditD
             request.Body.Position = 0;
         }
 
-        var message = new AuditRequestMessage
+        var message = new AuditRequestEvent
         {
             ServiceName = AirbnbSettings.ServiceName,
             HttpMethod = request.Method,
