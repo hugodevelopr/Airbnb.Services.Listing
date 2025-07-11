@@ -23,6 +23,9 @@ This is the **Listing microservice** of the [Airbnb Architecture Project](https:
 - xUnit
 - FluentValidation
 - AutoMapper
+- Service Locator
+- Event Sourcing
+- Scrutor
 
 
 ---

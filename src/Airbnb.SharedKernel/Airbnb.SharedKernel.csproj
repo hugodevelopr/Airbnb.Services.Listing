@@ -10,6 +10,7 @@
     <Folder Include="Entities\" />
     <Folder Include="Aggregates\" />
     <Folder Include="Events\" />
+    <Folder Include="Attributes\" />
     <Folder Include="Repositories\" />
     <Folder Include="Services\" />
   </ItemGroup>

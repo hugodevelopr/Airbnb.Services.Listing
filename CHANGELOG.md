@@ -23,6 +23,7 @@ All notable changes to this project will be documented in this file.
 - Adapted domain to dispatch domain events
 - Fixed location of DomainEvent, moved from ApplicationService to Core Domain
 - Adjusted on LocalizeMessageService
+- Fix namespace conflic with Listing entity
 
 ### 📚 Documentation
 
