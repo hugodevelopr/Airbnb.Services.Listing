@@ -1,5 +1,5 @@
 ﻿using Airbnb.Api.Infrastructure.Controllers;
-using Airbnb.AppService.Commands.Listing.CreateListing;
+using Airbnb.AppService.Commands.Listings.CreateListing;
 using Airbnb.Core.Commands;
 using Airbnb.SharedKernel;
 using Microsoft.AspNetCore.Mvc;

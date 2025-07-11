@@ -1,4 +1,4 @@
-﻿using Airbnb.Core.Events.Events.Listing.ListingCreated;
+﻿using Airbnb.Core.Events.Events.Listings.ListingCreated;
 using Airbnb.SharedKernel.Entities;
 using Airbnb.SharedKernel.Events;
 
@@ -30,6 +30,17 @@ public class Listing : BaseEntity
     public void AddRule(ListingRule rule)
     {
         _rules.Add(rule);
+    }
+
+    public void Create()
+    {
+
+        var @event = new ListingCreatedEvent()
+        {
+
+        };
+
+        ApplyChange(@event);
     }
 
     public enum PropertyType

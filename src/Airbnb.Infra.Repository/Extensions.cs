@@ -1,5 +1,5 @@
 ﻿using Airbnb.Core.Repositories;
-using Airbnb.Infra.Repository.Data.Listing;
+using Airbnb.Infra.Repository.Data.Listings;
 using Airbnb.Infra.Repository.Data.System;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

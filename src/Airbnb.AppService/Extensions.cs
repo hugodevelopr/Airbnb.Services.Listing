@@ -1,8 +1,8 @@
-﻿using Airbnb.AppService.Integrations.Listing.ListingPublished;
+﻿using Airbnb.AppService.Integrations.Listings.ListingPublished;
 using Airbnb.AppService.Services;
 using Airbnb.Core.Events.DomainEvents;
-using Airbnb.Core.Events.Events.Listing.ListingPublished;
-using Airbnb.Core.Events.Events.Listing.ListingUpdated;
+using Airbnb.Core.Events.Events.Listings.ListingPublished;
+using Airbnb.Core.Events.Events.Listings.ListingUpdated;
 using Airbnb.Core.Events.IntegrationEvents;
 using Airbnb.Core.Services;
 using Microsoft.Extensions.DependencyInjection;

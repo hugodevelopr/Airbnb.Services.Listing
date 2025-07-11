@@ -7,12 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Commands\Listing\UpdateExtraGuestFee\" />
-    <Folder Include="Commands\Listing\SuspendListing\" />
     <Folder Include="Queries\" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="15.0.1" />
     <PackageReference Include="FluentValidation" Version="12.0.0" />
   </ItemGroup>
 
