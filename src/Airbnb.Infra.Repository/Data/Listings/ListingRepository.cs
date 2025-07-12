@@ -40,7 +40,20 @@ public class ListingRepository : BaseRepository, IListingRepository
 
     public async Task<Listing?> GetByIdAsync(Guid listingId)
     {
-        throw new NotImplementedException();
+        await using var conn = new SqlConnection(ConnectionString);
+
+        try
+        {
+
+        }
+        catch (Exception ex)
+        {
+            throw;
+        }
+        finally
+        {
+            await conn.CloseAsync();
+        }
     }
 
     public async Task UpdateAsync(Listing listing)

@@ -2,6 +2,7 @@
 using Airbnb.AppService.Services;
 using Airbnb.Core.Commands;
 using Airbnb.Core.Events.DomainEvents;
+using Airbnb.Core.Events.Events.Listings.ListingPriceUpdated;
 using Airbnb.Core.Events.Events.Listings.ListingPublished;
 using Airbnb.Core.Events.Events.Listings.ListingUpdated;
 using Airbnb.Core.Events.IntegrationEvents;
@@ -49,6 +50,7 @@ public static class Extensions
     {
         services
             .AddTransient<IDomainEventHandler<ListingUpdatedEvent>, ListingUpdatedEventHandler>()
+            .AddTransient<IDomainEventHandler<ListingPriceUpdatedEvent>, ListingPriceUpdatedEventHandler>()
             .AddTransient<IDomainEventHandler<ListingPublishedEvent>, ListingPublishedEventHandler>();
 
         return services;

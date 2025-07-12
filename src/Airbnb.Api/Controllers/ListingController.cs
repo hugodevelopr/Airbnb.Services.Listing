@@ -1,5 +1,6 @@
 ﻿using Airbnb.Api.Infrastructure.Controllers;
 using Airbnb.AppService.Commands.Listings.CreateListing;
+using Airbnb.AppService.Commands.Listings.UpdateListingPrice;
 using Airbnb.Core.Commands;
 using Airbnb.SharedKernel;
 using Microsoft.AspNetCore.Mvc;
@@ -26,5 +27,15 @@ public class ListingController : BaseController
             return await Created(result);
         
         return Error(ErrorCode.FailedToCreateListing, result.Errors);
+    }
+
+    public async Task<IActionResult> UpdatePrice([FromBody] UpdateListingPriceCommand command)
+    {
+        var result = await _commandDispatcher.DispatchAsync(command);
+
+        if (result.IsSuccess)
+            return Ok(result.Value);
+
+        return Error(ErrorCode.FailedToUpdateListingPrice, result.Errors);
     }
 }

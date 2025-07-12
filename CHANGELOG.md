@@ -20,6 +20,7 @@ All notable changes to this project will be documented in this file.
 - Implemented event sourcing pattern to publish event to specific queue on dispatch of events
 - Implemeted filter responsable for attribute userId to commands
 - Implemented stored of listing using dapper
+- Implemented PriceHistory using LinkedList
 
 ### 🐛 Bug Fixes
 
