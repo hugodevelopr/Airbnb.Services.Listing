@@ -1,6 +1,8 @@
-﻿namespace Airbnb.Core.Repositories;
+﻿using Airbnb.Core.Entities;
+
+namespace Airbnb.Core.Repositories;
 
 public interface IListingRepository
 {
-    
+    Task AddAsync(Listing listing);
 }

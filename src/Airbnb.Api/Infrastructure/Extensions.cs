@@ -1,4 +1,5 @@
-﻿using Airbnb.Infra.DependencyInjection;
+﻿using Airbnb.Api.Infrastructure.Filters;
+using Airbnb.Infra.DependencyInjection;
 using Airbnb.Infra.Repository.Contexts;
 using Microsoft.EntityFrameworkCore;
 
@@ -8,7 +9,11 @@ public static class Extensions
 {
     public static IServiceCollection AddAirbnb(this IServiceCollection services, IConfiguration configuration)
     {
-        services.AddControllers();
+        services.AddControllers(options =>
+        {
+            options.Filters.Add<UserContextInjectionFilter>();
+        });
+
         services.AddOpenApi();
 
         services.AddDbContext<AirbnbDbContext>(options =>

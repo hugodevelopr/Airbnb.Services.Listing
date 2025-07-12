@@ -17,6 +17,7 @@ All notable changes to this project will be documented in this file.
 - Setted ITypeConfiguration and generated code-fist migration
 - Setted ITypeConfiguration and generated code-fist migration
 - Implemented WithCustomMessage a override method to FluentValidation
+- Implemented event sourcing pattern to publish event to specific queue on dispatch of events
 
 ### 🐛 Bug Fixes
 

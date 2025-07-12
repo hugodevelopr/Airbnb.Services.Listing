@@ -3,7 +3,9 @@ using Airbnb.AppService.Validations;
 using Airbnb.AppService.Validations.Listings;
 using Airbnb.Core.Commands;
 using Airbnb.Core.Entities;
+using Airbnb.Core.Repositories;
 using Airbnb.Core.Services;
+using Airbnb.Infra.Broker.EventSourcing;
 using Airbnb.SharedKernel;
 using Airbnb.SharedKernel.Common;
 using AutoMapper;
@@ -12,13 +14,15 @@ namespace Airbnb.AppService.Commands.Listings.CreateListing;
 
 public class CreateListingCommandHandler : ICommandHandler<CreateListingCommand, Result<CreateListingResponse>>
 {
-    private readonly IListingService _listingService;
+    private readonly IListingRepository _listingRepository;
     private readonly IMapper _mapper;
+    private readonly IStoreEvent _storeEvent;
 
-    public CreateListingCommandHandler(IListingService listingService, IMapper mapper)
+    public CreateListingCommandHandler(IListingRepository listingRepository, IMapper mapper, IStoreEvent storeEvent)
     {
-        _listingService = listingService;
+        _listingRepository = listingRepository;
         _mapper = mapper;
+        _storeEvent = storeEvent;
     }
 
     public async Task<Result<CreateListingResponse>> HandleAsync(CreateListingCommand command)
@@ -37,13 +41,15 @@ public class CreateListingCommandHandler : ICommandHandler<CreateListingCommand,
         var listing = new Listing();
         listing.Create();
 
+        await _listingRepository.AddAsync(listing);
+
         var changes = listing.GetChanges();
 
         foreach (var change in changes)
         {
-            //TODO: save to events
+            await _storeEvent.SaveEventAsync(change, listing.Id, command.UserId);
         }
-
+        
         response = _mapper.Map<CreateListingResponse>(response);
 
         return Result.Ok(response);
