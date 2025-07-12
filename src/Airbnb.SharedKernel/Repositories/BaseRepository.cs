@@ -1,6 +1,8 @@
-﻿namespace Airbnb.SharedKernel.Repositories;
+﻿using Microsoft.Extensions.Configuration;
 
-public abstract class BaseRepository
+namespace Airbnb.SharedKernel.Repositories;
+
+public abstract class BaseRepository(IConfiguration configuration)
 {
-    
+    protected string? ConnectionString { get; } = configuration.GetConnectionString("AirbnbDb");
 }

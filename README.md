@@ -26,6 +26,7 @@ This is the **Listing microservice** of the [Airbnb Architecture Project](https:
 - Service Locator
 - Event Sourcing
 - Scrutor
+- Dapper
 
 
 ---

@@ -19,7 +19,6 @@ public class UserContextInjectionFilter(IHttpContextAccessor httpContextAccessor
                     userIdProperty.SetValue(argument, userId);
                 }
             }
-
         }
 
         await next();
