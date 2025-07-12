@@ -16,6 +16,18 @@ public class Price : BaseEntity
     public Guid ListingId { get; private set; }
     public virtual Listing Listing { get; private set; } = null!;
 
+    public Price(decimal basePrice, string currency)
+    {
+        BasePrice = basePrice;
+        Currency = currency;
+    }
+
+    public void Update(decimal newPrice, string currency)
+    {
+        BasePrice = newPrice;
+        Currency = currency;
+    }
+
     protected override void Apply(IDomainEvent @event)
     {
         throw new NotImplementedException();

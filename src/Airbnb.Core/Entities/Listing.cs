@@ -1,4 +1,6 @@
 ﻿using Airbnb.Core.Events.Events.Listings.ListingCreated;
+using Airbnb.Core.Events.Events.Listings.ListingPriceRollback;
+using Airbnb.Core.Events.Events.Listings.ListingPriceUpdated;
 using Airbnb.SharedKernel.Entities;
 using Airbnb.SharedKernel.Events;
 
@@ -19,7 +21,11 @@ public class Listing : BaseEntity
 
     public virtual Location Location { get; private set; } = null!;
     public virtual Price Price { get; private set; } = null!;
+    public virtual PriceHistory PriceHistory { get; private set; } = null!;
     public virtual Availability Availability { get; private set; } = null!;
+
+    private readonly LinkedList<PriceHistory> _priceHistories = new();
+    public IEnumerable<PriceHistory> PriceHistories => _priceHistories;
 
     private readonly List<Image> _images = new();
     public IReadOnlyCollection<Image> Images => _images.AsReadOnly();
@@ -34,13 +40,48 @@ public class Listing : BaseEntity
 
     public void Create()
     {
-
+        PriceHistory = new PriceHistory(Price.BasePrice);
+        
         var @event = new ListingCreatedEvent()
         {
 
         };
 
         ApplyChange(@event);
+    }
+
+    public void UpdatePrice(decimal newPrice, string currency)
+    {
+        if (Price.BasePrice == newPrice && Price.Currency == currency)
+            return;
+
+        PriceHistory.AddPrice(newPrice);
+
+        Price.Update(newPrice, currency);
+
+        var @event = new ListingPriceUpdatedEvent()
+        {
+            ListingId = Id,
+            NewPrice = newPrice,
+        };
+
+        ApplyChange(@event);
+    }
+
+    public void RollbackPrice()
+    {
+        var isSuccess = PriceHistory.RollbackPrice();
+
+        if (isSuccess)
+        {
+            var @event = new ListingPriceRollbackEvent()
+            {
+                ListingId = Id,
+                CurrentPrice = PriceHistory.CurrentPrice,
+            };
+
+            ApplyChange(@event);
+        }
     }
 
     public enum PropertyType
@@ -63,6 +104,8 @@ public class Listing : BaseEntity
         switch (@event)
         {
             case ListingCreatedEvent e:
+                break;
+            case ListingPriceUpdatedEvent e:
                 break;
         }
     }

@@ -19,6 +19,7 @@ All notable changes to this project will be documented in this file.
 - Implemented WithCustomMessage a override method to FluentValidation
 - Implemented event sourcing pattern to publish event to specific queue on dispatch of events
 - Implemeted filter responsable for attribute userId to commands
+- Implemented stored of listing using dapper
 
 ### 🐛 Bug Fixes
 

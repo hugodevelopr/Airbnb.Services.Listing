@@ -37,4 +37,14 @@ public class ListingRepository : BaseRepository, IListingRepository
             await conn.CloseAsync();
         }
     }
+
+    public async Task<Listing?> GetByIdAsync(Guid listingId)
+    {
+        throw new NotImplementedException();
+    }
+
+    public async Task UpdateAsync(Listing listing)
+    {
+        throw new NotImplementedException();
+    }
 }
