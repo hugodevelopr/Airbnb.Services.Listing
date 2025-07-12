@@ -2,6 +2,7 @@
 using Airbnb.Infra.DependencyInjection;
 using Airbnb.Infra.Repository.Contexts;
 using Microsoft.EntityFrameworkCore;
+using Serilog;
 
 namespace Airbnb.Api.Infrastructure;
 

@@ -29,8 +29,11 @@ public class ListingController : BaseController
         return Error(ErrorCode.FailedToCreateListing, result.Errors);
     }
 
-    public async Task<IActionResult> UpdatePrice([FromBody] UpdateListingPriceCommand command)
+    [HttpPut("{listingId:guid}/price")]
+    public async Task<IActionResult> UpdatePrice([FromRoute] Guid listingId, [FromBody] UpdateListingPriceCommand command)
     {
+        command.ListingId = listingId;
+
         var result = await _commandDispatcher.DispatchAsync(command);
 
         if (result.IsSuccess)
