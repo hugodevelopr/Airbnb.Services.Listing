@@ -37,7 +37,7 @@ public class ListingController : BaseController
         var result = await _commandDispatcher.DispatchAsync(command);
 
         if (result.IsSuccess)
-            return Ok(result.Value);
+            return Ok(result);
 
         return Error(ErrorCode.FailedToUpdateListingPrice, result.Errors);
     }

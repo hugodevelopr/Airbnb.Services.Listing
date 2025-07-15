@@ -3,7 +3,9 @@ using Airbnb.Core;
 using Airbnb.Infra.Broker;
 using Airbnb.Infra.Broker.Publisher;
 using Airbnb.Infra.Repository;
+using Airbnb.Infra.Repository.Contexts;
 using Airbnb.SharedKernel.Audit;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -13,6 +15,16 @@ public static class DependencyInjection
 {
     public static IServiceCollection AddAirbnbDependencies(this IServiceCollection services, IConfiguration configuration)
     {
+        services.AddDbContext<AirbnbDbContext>(options =>
+        {
+            options.EnableDetailedErrors();
+            options.UseSqlServer(configuration.GetConnectionString("AirbnbDb"), sqlOptions =>
+            {
+                sqlOptions.MigrationsAssembly("Airbnb.Api");
+                sqlOptions.MigrationsHistoryTable("__EFMigrationsHistory", "Airbnb");
+            });
+        });
+
         services.AddAppService();
         services.AddCore();
         services.AddRepository(configuration);

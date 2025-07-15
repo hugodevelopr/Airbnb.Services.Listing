@@ -6,16 +6,11 @@ using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
-Console.WriteLine(FiggleFonts.Doom.Render("Airbnb.Service.Listing"));
-
-Log.Logger = new LoggerConfiguration()
-    .ReadFrom.Configuration(builder.Configuration)
-    .Enrich.FromLogContext()
-    .CreateLogger();
-
-builder.Host.UseSerilog();
+Console.WriteLine(FiggleFonts.Doom.Render(AirbnbSettings.ServiceName));
 
 builder.Services.AddAirbnb(builder.Configuration);
+
+builder.Host.UseSerilog();
 
 var app = builder.Build();
 

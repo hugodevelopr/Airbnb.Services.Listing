@@ -22,6 +22,7 @@ All notable changes to this project will be documented in this file.
 - Implemented stored of listing using dapper
 - Implemented PriceHistory using LinkedList
 - Implemented serilog on project as provider of log
+- Implemented outbox pattern
 
 ### 🐛 Bug Fixes
 

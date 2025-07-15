@@ -29,7 +29,8 @@ This is the **Listing microservice** of the [Airbnb Architecture Project](https:
 - Dapper
 - Serilog
 - New Relic
-- Outbox
+- OpenTelemetry
+- Outbox Pattern
 
 
 ---
