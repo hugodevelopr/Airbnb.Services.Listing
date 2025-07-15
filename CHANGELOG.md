@@ -21,6 +21,7 @@ All notable changes to this project will be documented in this file.
 - Implemeted filter responsable for attribute userId to commands
 - Implemented stored of listing using dapper
 - Implemented PriceHistory using LinkedList
+- Implemented serilog on project as provider of log
 
 ### 🐛 Bug Fixes
 
