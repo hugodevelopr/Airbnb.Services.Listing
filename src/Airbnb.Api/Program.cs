@@ -10,6 +10,13 @@ Console.WriteLine(FiggleFonts.Doom.Render(AirbnbSettings.ServiceName));
 
 builder.Services.AddAirbnb(builder.Configuration);
 
+builder.Logging.AddOpenTelemetry(options =>
+{
+    options.IncludeFormattedMessage = true;
+    options.IncludeScopes = true;
+    options.ParseStateValues = true;
+});
+
 builder.Host.UseSerilog();
 
 var app = builder.Build();

@@ -23,6 +23,7 @@ All notable changes to this project will be documented in this file.
 - Implemented PriceHistory using LinkedList
 - Implemented serilog on project as provider of log
 - Implemented outbox pattern
+- Implemented usage of NewRelic with OpenTelemetry, this tecnologies will make all observabilitty
 
 ### 🐛 Bug Fixes
 

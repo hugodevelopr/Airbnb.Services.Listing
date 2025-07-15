@@ -1,6 +1,7 @@
 ﻿using Airbnb.Api.Infrastructure.Filters;
 using Airbnb.Infra.DependencyInjection;
 using Airbnb.SharedKernel;
+using OpenTelemetry;
 using OpenTelemetry.Resources;
 using OpenTelemetry.Trace;
 using Serilog;
@@ -35,10 +36,12 @@ public static class Extensions
             .CreateLogger();
 
         services.AddOpenTelemetry()
+            .UseOtlpExporter()
             .WithTracing(traceProvider =>
             {
                 traceProvider
                     .AddSource(AirbnbSettings.ServiceName)
+                    .AddAspNetCoreInstrumentation()
                     .SetResourceBuilder(ResourceBuilder.CreateDefault()
                         .AddService(AirbnbSettings.ServiceName))
                     .AddOtlpExporter(options =>
@@ -46,6 +49,7 @@ public static class Extensions
                         options.Endpoint = new Uri(configuration["NewRelic:EndpointUrl"]!);
                         options.Headers = $"api-key={configuration["NewRelic:ApiKey"]}";
                     });
+
             });
 
         return services;
